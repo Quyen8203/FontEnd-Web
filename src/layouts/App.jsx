@@ -9,7 +9,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Login from "../pages/Home/Login";
 import SignIn from "../pages/Home/SignIn";
-import DuoiEvent from "../component/duoiEvent";
+import DuoiEvent from "../component/DuoiEvent";
 import CinemaBooking from "../pages/Home/CinemaBooking";
 import NowShowing from "../pages/Home/NowShowing";
 import MovieDetail from "../pages/Home/MovieDetail";
