@@ -35,7 +35,7 @@ const Header = () => {
           className="bg-transparent text-white cursor-pointer hover:text-red-500 transition"
           onClick={() => navigate("")}
         >
-          Quế Trân
+          Nhom 23 chiều thứ 4
         </button>
       </nav>
 
