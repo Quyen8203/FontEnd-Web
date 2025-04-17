@@ -1,38 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Banner from "../../component/Banner";
 import MovieSelection from "../../component/MovieSelection";
 import EventFilm from "../../component/EventFilm";
 import DuoiEvent from "../../component/DuoiEvent";
 
-const Home = () => {
-  const [movies, setMovies] = useState([]);
-  
-  
-
+const Home = ({ movies }) => {
   useEffect(() => {
-      // Gọi API khi component mount
-      const fetchMovies = async () => {
-        try {
-          const res = await fetch("http://192.168.50.254:9091/api/movies/listMovie");
-          const data = await res.json();
-          // Lọc phim đang chiếu
-          const nowShowingMovies = data.filter((movie) => movie.isNowShowing);
-          setMovies(nowShowingMovies);
-        } catch (error) {
-          console.error("Lỗi khi gọi API:", error);
-        }
-      };
+    console.log("Movies:", movies);
+  }, [movies]);
 
-    fetchMovies();
-  }, []);
+  if (!movies) {
+    return <div>Đang tải dữ liệu phim...</div>;
+  }
+
+  const nowShowing = movies.filter((movie) => movie.isNowShowing);
 
   return (
     <div>
       <Banner />
-      <MovieSelection movies={movies} />{" "}
-      {/* Truyền movies vào MovieSelection */}
-      <EventFilm />
       
+      {/* ✅ Truyền dữ liệu phim vào MovieSelection */}
+      <MovieSelection movies={nowShowing} />
+      
+      <EventFilm />
+      <DuoiEvent />
     </div>
   );
 };

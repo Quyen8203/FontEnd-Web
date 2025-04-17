@@ -16,31 +16,30 @@ import MovieDetail from "../pages/Home/MovieDetail";
 import UserProfile from "../pages/Home/UserProfile";
 import SeatSelection from "../pages/Home/SeatSelection";
 import ComboSelection from "../pages/Home/ComboSelection";
+import Admin from "../pages/Home/Admin";
+import MovieSelection from "../component/MovieSelection";   
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);  // Hàm setter là setMovies
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const options = {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-          },
-        };
-        const url =
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
-        const response = await fetch(url, options);
-        const data = await response.json();
-        setMovies(data.results || []); // Đảm bảo mảng không bị undefined
-      } catch (error) {
-        console.error("Lỗi khi lấy dữ liệu phim:", error);
-      }
-    };
+    const fetchMovie = async () => {
+    try {
+      const res = await fetch("http://localhost:9091/movies/list");
+      const data = await res.json();
+      console.log("data:", data); // kiểm tra output
 
-    fetchMovies();
+      if (Array.isArray(data.data)) {
+        setMovies(data.data); // ✅ Lấy đúng mảng phim
+      } else {
+        console.error("Dữ liệu không hợp lệ:", data);
+      }
+    } catch (error) {
+      console.error("Lỗi khi gọi API:", error);
+    }// Sử dụng setMovies thay vì setMovie
+    };
+    
+    fetchMovie();
   }, []);
 
   return (
@@ -51,7 +50,6 @@ const App = () => {
 
         <section className="flex-grow container mx-auto">
           <Routes>
-           
             <Route path="/" element={<Home movies={movies} />} />{" "}
             {/* ✅ Truyền movies */}
             <Route path="/login" element={<Login />} />
@@ -60,9 +58,9 @@ const App = () => {
             <Route path="/now-showing" element={<NowShowing />} />
             <Route path="/movies/:id" element={<MovieDetail />} /> {/* Quan trọng */}
             <Route path="/user-profile" element={<UserProfile />} />
-            <Route path="/seat-selection" element={<SeatSelection/>} />
-            <Route path="/combo-selection" element={<ComboSelection/>}/>
-            
+            <Route path="/seat-selection" element={<SeatSelection />} />
+            <Route path="/combo-selection" element={<ComboSelection />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
           <DuoiEvent />
         </section>

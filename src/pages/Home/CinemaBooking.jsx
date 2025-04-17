@@ -42,7 +42,7 @@ export default function CinemaBooking() {
   return (
     <div className="max-w-6xl mx-auto p-4">
       <h1 className="text-2xl font-bold text-center">
-        Đặt vé cho phim: {movie?.title || "Không có dữ liệu"}
+        Đặt vé cho phim: {movie?.movieName || "Không có dữ liệu"}
       </h1>
       
       {/* Nút Đặt Vé */}

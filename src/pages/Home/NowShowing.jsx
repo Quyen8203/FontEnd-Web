@@ -5,21 +5,20 @@ import { Home, ThumbsUp, Ticket } from "lucide-react";
 const NowShowing = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
-    // Gọi API khi component mount
     const fetchMovies = async () => {
       try {
-        const res = await fetch("http://192.168.50.254:9091/api/movies/listMovie");
+        const res = await fetch("http://localhost:9091/movies/now-showing");
         const data = await res.json();
-        // Lọc phim đang chiếu
-        const nowShowingMovies = data.filter((movie) => movie.isNowShowing);
-        setMovies(nowShowingMovies);
+        const nowShowing = data.data.filter((movie) => movie.isNowShowing); // ✅ lọc từ data
+        setMovies(nowShowing); // ✅ set lại
       } catch (error) {
         console.error("Lỗi khi gọi API:", error);
       }
     };
-
+  
     fetchMovies();
   }, []);
 
@@ -47,7 +46,7 @@ const NowShowing = () => {
               onClick={() => navigate(`/movies/${movie.movieId}`)}
             >
               <img
-                src={movie.posterUrl}
+                src={movie.moviePoster}
                 alt={movie.title}
                 className="w-full h-100 object-cover"
               />
@@ -55,10 +54,10 @@ const NowShowing = () => {
             <div className="p-4 text-center">
               <h3 className="font-bold text-lg">{movie.title}</h3>
               <p className="text-gray-600 text-sm">
-                <span className="font-bold">Thời lượng:</span> {movie.duration} phút
+                <span className="font-bold">Thời lượng:</span> {movie.movieLength} phút
               </p>
               <p className="text-gray-600 font-semibold text-sm">
-                <span className="font-bold">Khởi chiếu:</span> {movie.releaseDate}
+                <span className="font-bold">Khởi chiếu:</span> {movie.movieRelease}
               </p>
               {/* Like & Mua Vé */}
               <div className="flex justify-center items-center gap-3 mt-3">

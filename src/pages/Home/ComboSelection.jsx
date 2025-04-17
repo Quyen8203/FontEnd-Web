@@ -81,7 +81,7 @@ export default function ComboSelection() {
 
       <button
         className="mt-6 bg-red-500 text-white py-2 px-4 rounded hover:bg-green-600 disabled:bg-gray-400"
-        disabled={totalPrice === seatTotalPrice} // Chỉ cho xác nhận nếu đã chọn ít nhất 1 combo hoặc ghế
+       // Chỉ cho xác nhận nếu đã chọn ít nhất 1 combo hoặc ghế
         onClick={handleConfirm}
       >
         Xác nhận

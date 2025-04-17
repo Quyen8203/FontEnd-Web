@@ -17,18 +17,22 @@ export default function UserProfile() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                >
-                  <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z" />
+                ><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z" />
                 </svg>
               </div>
-              <button className="mt-3 bg-gray-400 text-white px-4 py-1 rounded">
-                Thay đổi
-              </button>
+              <button
+  className="mt-3 bg-red-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"
+  onClick={() => {}}
+>
+  Thay đổi
+</button>
+
+              
             </div>
           </div>
           {/* User Info */}
           <div className="flex-1 mt-6 lg:mt-0 lg:ml-6 w-full">
-            <p className="font-bold text-lg">Xin Chào User,</p>
+            <p className="font-bold text-lg">Xin Chào Nghiêm Siêu Quốc Quyền,</p>
             <p className="text-gray-700">
               Với trang này bạn sẽ quản lý được tất cả thông tin tài khoản của
               mình.
@@ -40,26 +44,26 @@ export default function UserProfile() {
               {/* Cấp Độ Thẻ */}
               <div className="border-r p-2">
                 <p className="text-gray-600">Cấp Độ Thẻ</p>
-                <p className="font-semibold">1</p>
+                <p className="font-semibold">3</p>
               </div>
   
               {/* Tổng Chi Tiêu */}
               <div className="border-r p-2">
                 <p className="text-gray-600">Tổng Chi Tiêu</p>
-                <p className="font-semibold">0 Đ</p>
+                <p className="font-semibold">10.000.000Đ</p>
               </div>
   
               {/* Điểm CGV */}
               <div className="border-r p-2">
                 <p className="text-gray-600">Điểm CGV</p>
-                <p className="font-semibold">0 P</p>
+                <p className="font-semibold">505 P</p>
               </div>
   
               {/* Thẻ Quà Tặng */}
               <div className="border-r p-2">
                 <p className="text-gray-600">Thẻ Quà Tặng</p>
-                <p className="font-semibold">0 Đ</p>
-                <button className="bg-blue-400 text-white px-3 py-1 rounded text-xs mt-1">
+                <p className="font-semibold">100.000 Đ</p>
+                <button className="mt-3 bg-blue-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"onClick={() => {}}>
                   Xem
                 </button>
               </div>
@@ -67,8 +71,8 @@ export default function UserProfile() {
               {/* Voucher */}
               <div className="border-r p-2">
                 <p className="text-gray-600">Voucher</p>
-                <p className="font-semibold">0</p>
-                <button className="bg-blue-400 text-white px-3 py-1 rounded text-xs mt-1">
+                <p className="font-semibold">5</p>
+                <button className="mt-3 bg-blue-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"onClick={() => {}}>
                   Xem
                 </button>
               </div>
@@ -77,7 +81,7 @@ export default function UserProfile() {
               <div className="border-r p-2">
                 <p className="text-gray-600">Coupon</p>
                 <p className="font-semibold">1</p>
-                <button className="bg-blue-400 text-white px-3 py-1 rounded text-xs mt-1">
+                <button className="mt-3 bg-blue-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"onClick={() => {}}>
                   Xem
                 </button>
               </div>
@@ -86,7 +90,7 @@ export default function UserProfile() {
               <div className="p-2">
                 <p className="text-gray-600">Thẻ Thành Viên</p>
                 <p className="font-semibold">1</p>
-                <button className="bg-blue-400 text-white px-3 py-1 rounded text-xs mt-1">
+                <button className="mt-3 bg-blue-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"onClick={() => {}}>
                   Xem
                 </button>
               </div>
@@ -99,16 +103,16 @@ export default function UserProfile() {
             <hr className="mt-4 mb-4" />
             <div className="mt-3">
               <p className="text-gray-700">
-                <span className="font-semibold">Tên:</span> User
+                <span className="font-semibold">Tên:</span> Nghiêm Siêu Quốc Quyền
               </p>
               <p className="text-gray-700">
-                <span className="font-semibold">Email:</span> User@gmail.com
+                <span className="font-semibold">Email:</span> QuyenPro111@gmail.com
               </p>
               <p className="text-gray-700">
-                <span className="font-semibold">Điện Thoại:</span> 09090000
+                <span className="font-semibold">Điện Thoại:</span> 0909.999.999
               </p>
             </div>
-            <button className="mt-3 bg-gray-400 text-white px-4 py-1 rounded">
+            <button className="mt-3 bg-red-400 text-white px-4 py-1 rounded hover:bg-yellow-500 hover:shadow-md transition duration-200"onClick={() => {}}>
               Thay Đổi
             </button>
           </div>
