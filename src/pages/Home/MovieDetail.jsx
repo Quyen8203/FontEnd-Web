@@ -9,7 +9,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const fetchMovieDetail = async () => {
       try {
-        const res = await fetch(`http://localhost:9091/movies/${id}`);
+        const res = await fetch(`http://192.168.1.21:9091/movies/${id}`);
         const data = await res.json();
         setMovie(data.data);
       } catch (error) {

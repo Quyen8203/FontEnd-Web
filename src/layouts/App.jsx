@@ -25,7 +25,7 @@ const App = () => {
   useEffect(() => {
     const fetchMovie = async () => {
     try {
-      const res = await fetch("http://localhost:9091/movies/list");
+      const res = await fetch("http://192.168.1.21:9091/movies/list");
       const data = await res.json();
       console.log("data:", data); // kiểm tra output
 
@@ -61,6 +61,7 @@ const App = () => {
             <Route path="/seat-selection" element={<SeatSelection />} />
             <Route path="/combo-selection" element={<ComboSelection />} />
             <Route path="/admin" element={<Admin />} />
+            
           </Routes>
           <DuoiEvent />
         </section>

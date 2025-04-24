@@ -34,7 +34,9 @@ export default function SeatSelection() {
   return (
     <div className="max-w-3xl mx-auto p-4 text-center">
       <h1 className="text-2xl font-bold">Chọn Ghế - {movie?.movieName || "Không có dữ liệu"}</h1>
-      <p className="text-gray-600">Rạp: {selectedTime?.cinema} | Suất chiếu: {selectedTime?.time}</p>
+      <p className="text-gray-600">
+  Rạp: {selectedTime?.cinemaName} | Suất chiếu: {selectedTime?.scheduleStart?.slice(0, 5)}</p>
+
 
       <div className="mt-6 bg-gray-100 p-4 rounded">
         <p className="text-lg font-bold mb-2">SCREEN</p>

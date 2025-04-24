@@ -10,7 +10,7 @@ const NowShowing = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await fetch("http://localhost:9091/movies/now-showing");
+        const res = await fetch("http://192.168.1.21:9091/movies/now-showing");
         const data = await res.json();
         const nowShowing = data.data.filter((movie) => movie.isNowShowing); // ✅ lọc từ data
         setMovies(nowShowing); // ✅ set lại
